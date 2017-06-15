@@ -1,12 +1,16 @@
 
 # Mandelbrot
 
-### Monochrome Mandelbrot set explorer
+### Monochrome Mandelbrot Set explorer.
+
+
+[1]: https://tinram.github.io/images/mandelbrot.gif
+![mandelbrot][1]
 
 
 ## Purpose
 
-Minimalist Mandelbrot fractal explorer with accurate zoom coordinates.
+Minimalist Mandelbrot Set fractal explorer with accurate zoom coordinates.
 
 
 ## OS Support
@@ -39,7 +43,7 @@ Use the FreeBASIC x32 compiler and GCC.
 
 #### Further Optimisation
 
-**example:**
+*example:*
 
     -Wc -march=core-avx2,-mtune=core-avx2      # Intel Haswell CPU
 
@@ -55,11 +59,11 @@ Use the FreeBASIC x32 compiler and GCC.
 
 The rendering is reasonably fast for a single-threaded application, while preserving good detail in the set.
 
-Colouring the Mandelbrot set can be a pain: easy to get weird colour schemes, hard to get effective ones.  The existing scheme is merely a compromise.
+Colouring the Mandelbrot Set can be a pain: easy to get weird colour schemes, hard to get effective ones. The existing scheme is merely a compromise.
 
 A sine-based colouring scheme could offer a larger range of greys.
 
-Saving bitmaps is lousy but native in FreeBASIC.  Non-native PNG support would bloat the executable considerably.
+Saving bitmaps is lousy but native in FreeBASIC. Non-native PNG support would bloat the executable considerably.
 
 
 ## License
