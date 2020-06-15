@@ -1,15 +1,19 @@
 
-' Monochrome Mandelbrot viewer.
+'-----------------------------------------------------------------------------------------
+'
+' Monochrome Mandelbrot Explorer.
 '
 ' Mandelbrot math loop converted from C: http://warp.povusers.org/Mandelbrot/
 ' Mouse zoom by RedMarvin.
 ' SHL optimisations by D.J. Peters.
 '
-' @author        Martin Latter <copysense.co.uk>
+' @author        Martin Latter
 ' @copyright     Martin Latter, 20/08/2011
-' @version       0.2
+' @version       0.21
 ' @license       GNU GPL version 3.0 (GPL v3); https://www.gnu.org/licenses/gpl-3.0.html
 ' @link          https://github.com/Tinram/Mandelbrot.git
+'
+'-----------------------------------------------------------------------------------------
 
 
 ' #include "FBGfx.bi"
@@ -96,7 +100,7 @@ LOOP UNTIL MULTIKEY(&h01) OR INKEY = sXClicked
 
 SUB renderFractal(BYVAL fMinReal AS DOUBLE, BYVAL fMaxImag AS DOUBLE, BYVAL fScreenDivisor AS SINGLE)
 
-	DIM AS UINTEGER PTR pSP = SCREENPTR
+	DIM AS ULONG PTR pSP = SCREENPTR ' fbc x64, use UINTEGER for x32
 	DIM AS UINTEGER iX, iY, iN, iC, iColflag
 	DIM AS DOUBLE fRealFactor, fImagFactor, fCImag, fCReal, fZReal, fZReal2, fZImag, fZImag2
 
