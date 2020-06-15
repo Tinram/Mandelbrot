@@ -21,8 +21,8 @@ Minimalist Mandelbrot Set fractal explorer with accurate zoom coordinates.
 
 ## Controls
 
-    Mouse left button        zoom in
-    Mouse right button       zoom out
+    mouse left button        zoom in
+    mouse right button       zoom out
     C                        toggle between lighter and darker greys
     S                        screenshot (bitmap screenshot saved to current dir)
     R                        reset view
@@ -31,21 +31,29 @@ Minimalist Mandelbrot Set fractal explorer with accurate zoom coordinates.
 
 ## Build
 
-Use the FreeBASIC x32 compiler and GCC.
+Install [FreeBASIC](http://www.freebasic.net/forum/viewforum.php?f=1) compiler (*fbc*).
+
+(Compilation can be with either the x32 or x64 version of *fbc*, but x32-compilation will require the screen pointer datatype to be changed (see source comment).)
+
+Ensure GCC is available: `whereis gcc`
 
 ### Linux
 
-    fbc monomandel.bas icons/monomandel.xpm -gen gcc -O max -w all -arch pentium4-sse3
+```bash
+    make
+```
+
+or
+
+```bash
+    fbc monomandel.bas icons/monomandel.xpm -gen gcc -O max -w all -Wl -s -Wc -march=native,-mtune=native
+```
 
 ### Windows
 
+```batch
     fbc monomandel.bas -s gui monomandel.rc -gen gcc -O max -w all -arch pentium4-sse3
-
-#### Further Optimisation
-
-*example:*
-
-    -Wc -march=core-avx2,-mtune=core-avx2      # Intel Haswell CPU
+```
 
 
 ## Credits
